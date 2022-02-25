@@ -1,6 +1,12 @@
 import {telaPrincipal} from "../script.js"
 import{symbol} from "../Bd/bd.js"
+import{PlayerControle} from "../controller/player.js"
+import{Adversario} from "../controller/adversary.js"
+
 class TelaInicial{
+
+    static btnPlay = ""
+    static select = ""
 
     static createHtml(){
         telaPrincipal.innerHTML = `
@@ -29,9 +35,9 @@ class TelaInicial{
             <h2>Voce</h2>
             <h3>Escolha o seu simbolo</h3>
             <ul id="escolha">
-                <li><i id = ${symbol[0].nome}class = ${symbol[0].img}></i></li>
-                <li><i id = ${symbol[1].nome}class = ${symbol[1].img}></i></li>
-                <li><i id = ${symbol[2].nome}class = ${symbol[2].img}></i></li>
+                <li id = ${symbol[0].nome}><i class = ${symbol[0].img}></i></li>
+                <li id = ${symbol[1].nome}><i class = ${symbol[1].img}></i></li>
+                <li id = ${symbol[2].nome}><i class = ${symbol[2].img}></i></li>
             </ul>
         </section>
 
@@ -42,8 +48,21 @@ class TelaInicial{
             <div><i id =result ></i></div>
         </section>
         
-        <button>Play</button>
+        <button id ="btnPlay">Play</button>
         `
+        this.select = document.getElementById('escolha')
+        this.btnPlay = document.getElementById('btnPlay')
+
+        TelaInicial.select.addEventListener("click",PlayerControle.selectSymbol)
+        TelaInicial.btnPlay.addEventListener('click',Adversario.ramdomNum)
+    }
+    static showSymbol(li){
+
+        this.select.innerHTML = ""
+        this.select.innerHTML = `
+        <li><i class = ${li}></i></li>
+        `
+        return true
     }
 }
 

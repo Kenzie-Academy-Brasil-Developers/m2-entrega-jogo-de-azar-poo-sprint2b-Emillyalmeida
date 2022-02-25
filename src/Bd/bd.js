@@ -1,16 +1,16 @@
 const symbol = [
     {
         id:0,
-        img:'',
+        img:'1',
         nome:'pedra'
 
     },{
         id:1,
-        img: '',
+        img: '3',
         nome:'tesoura'
     },{
         id:2,
-        img:"",
+        img:"5",
         nome:'papel'
     }
 ]
