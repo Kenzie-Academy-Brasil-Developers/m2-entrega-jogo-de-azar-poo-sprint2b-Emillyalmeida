@@ -2,13 +2,19 @@ import {TelaInicial} from "../models/index.js"
 import {symbol} from "../Bd/bd.js"
 
 class PlayerControle{
-    static choose = ""
+    static choose = ''
     static selectSymbol(event){
-        const li = event.target.id
-        this.choose = li
-        const filter = symbol.filter((el)=>el.nome === li)
+        if(event.target.tagName == "IMG"){
+            const li = event.target.id
+            PlayerControle.choose = li
+            console.log(PlayerControle.choose)
+            const filter = symbol.filter((el)=>el.nome === li)
+            
+            TelaInicial.showSymbol(filter[0].img)
+            return true
+        }
+        return false
         
-        TelaInicial.showSymbol(filter[0].img)
     }
 }
 
