@@ -4,7 +4,7 @@ import{PlayerControle} from "./player.js"
 
 class Adversario {
     static ramdomNum(){
-         if(PlayerControle.choose == ''){
+         if(!PlayerControle.controlButton){
              alert("escolha seu simbolo")
              return true
          }else{
@@ -23,6 +23,7 @@ class Adversario {
          setTimeout(()=>{
              result.classList.remove(img)
              Winner.isWinner(nome)
+             PlayerControle.controlButton = false
          },2000)
      }
 

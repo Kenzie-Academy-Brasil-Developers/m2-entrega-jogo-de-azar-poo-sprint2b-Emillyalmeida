@@ -23,7 +23,7 @@ class Winner {
         console.log(mensage)
         const msg = final.filter((el)=>el.nome == mensage)
 
-        TelaInicial.vencedor(msg)
+        TelaInicial.vencedor(...msg)
 
     }
 }

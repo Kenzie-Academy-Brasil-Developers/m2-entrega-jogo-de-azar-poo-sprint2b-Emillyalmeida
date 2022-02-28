@@ -24,15 +24,15 @@ const final = [
     },
 
     {
-      nome:"player",
+      nome:"Player",
       img:"./src/img/vitoria.gif",
       msg:"Parabéns você ganhou !!!"
 
     },
     {
         nome:"Adversario",
-        img:"./src/img/vitoria.gif",
-        msg:"Que pena você perdeu :("
+        img:"./src/img/derota.gif",
+        msg:"Que pena, você perdeu :("
     }
 ]
 

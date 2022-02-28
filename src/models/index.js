@@ -1,5 +1,5 @@
 import {telaPrincipal} from "../script.js"
-import{symbol} from "../Bd/bd.js"
+import{symbol,final} from "../Bd/bd.js"
 import{PlayerControle} from "../controller/player.js"
 import{Adversario} from "../controller/adversary.js"
 
@@ -12,7 +12,7 @@ class TelaInicial{
         telaPrincipal.innerHTML = `
         <h2>Como jogar</h2>
         <p>Voce de escolher entre pedra, papel ou tesoura. E seu adversario ira fazer o mesmo.</p>
-        <p>Sempre que uma pessoa colocar um símbolo mais fraco, essa pessoa perderá a disputa</p>
+        <p>Sempre que uma pessoa colocar um símbolo mais fraco, essa pessoa perderá a disputa.</p>
         <p>Ganha quem mostrar o objeto mais forte.Se os simbolos forem iguais é empate.</p>
         <h3>Regras do jogo</h3>
         <ul>
@@ -33,7 +33,7 @@ class TelaInicial{
         return true
     }
     static iniciarGame(){
-        telaPrincipal.classList.remove("inicio")
+        telaPrincipal.classList.remove("inicio","final")
         telaPrincipal.innerHTML=""
         telaPrincipal.innerHTML=`
         <h3>Escolha o seu simbolo.</h3>
@@ -51,7 +51,7 @@ class TelaInicial{
         <div><p>X</p></div>
 
         <section class = "adversario">
-            <h2>Adversario</h2>
+            <h2>Adversário</h2>
             <ul id =result></ul>
         </section>
         <div class= 'play'>
@@ -75,7 +75,8 @@ class TelaInicial{
         return true
     }
     static vencedor(mensage){
-        const {img,msg} = mensage
+
+        const {nome,img,msg} = mensage
 
         telaPrincipal.classList.remove("partida")
         telaPrincipal.innerHTML = ""
