@@ -15,4 +15,25 @@ const symbol = [
     }
 ]
 
-export {symbol}
+const final = [
+    {
+        nome:"Empate",
+        img:"./src/img/empate.gif",
+        msg:"O jogo empatou"
+
+    },
+
+    {
+      nome:"player",
+      img:"./src/img/vitoria.gif",
+      msg:"Parabéns você ganhou !!!"
+
+    },
+    {
+        nome:"Adversario",
+        img:"./src/img/vitoria.gif",
+        msg:"Que pena você perdeu :("
+    }
+]
+
+export {symbol,final}

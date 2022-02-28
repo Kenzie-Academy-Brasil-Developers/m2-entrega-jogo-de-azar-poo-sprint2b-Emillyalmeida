@@ -23,7 +23,7 @@ class Adversario {
          setTimeout(()=>{
              result.classList.remove(img)
              Winner.isWinner(nome)
-         },2500)
+         },2000)
      }
 
         }

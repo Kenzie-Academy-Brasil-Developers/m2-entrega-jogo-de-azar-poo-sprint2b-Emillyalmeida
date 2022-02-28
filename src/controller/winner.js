@@ -1,5 +1,6 @@
 import {PlayerControle} from "./player.js"
 import{TelaInicial} from "../models/index.js"
+import{final} from "../Bd/bd.js"
 
 class Winner {
     static isWinner(adversario){
@@ -19,9 +20,10 @@ class Winner {
         else{
             mensage = "Player"
         }
-        console.log(adversario)
-        console.log(PlayerControle.choose)
-        TelaInicial.vencedor(mensage)
+        console.log(mensage)
+        const msg = final.filter((el)=>el.nome == mensage)
+
+        TelaInicial.vencedor(msg)
 
     }
 }

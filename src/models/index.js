@@ -64,9 +64,10 @@ class TelaInicial{
 
         TelaInicial.select.addEventListener("click",PlayerControle.selectSymbol)
         TelaInicial.btnPlay.addEventListener('click',Adversario.ramdomNum)
+      
     }
     static showSymbol(li){
-
+        
         this.select.innerHTML = ""
         this.select.innerHTML = `
             <li><img src ="${li}"></li>
@@ -74,11 +75,23 @@ class TelaInicial{
         return true
     }
     static vencedor(mensage){
+        const {img,msg} = mensage
+
+        telaPrincipal.classList.remove("partida")
         telaPrincipal.innerHTML = ""
         telaPrincipal.innerHTML = `
-          <h1>${mensage}</h1>
+          <h1>${msg}</h1>
+          <img src=${img}>
+          <p>click em reiniciar para jogar novamente.</p>
+          <button id="reiniciar">reiniciar</button>
         `
+        telaPrincipal.classList.add('final')
+
+        const reinicio = document.getElementById('reiniciar')
+        reinicio.addEventListener('click',TelaInicial.iniciarGame.bind(TelaInicial))
+ 
     }
+    
 }
 
 export {TelaInicial}
